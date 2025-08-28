@@ -14,7 +14,7 @@ import Button from './Button.astro';
         </p>
       </div>
       
-      <form id="contact-form" class="space-y-6">
+      <form id="contact-form" action="https://formspree.io/f/xldwgjey" method="POST" class="space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">
@@ -93,11 +93,25 @@ import Button from './Button.astro';
       return;
     }
     
-    // In a real application, you would send this data to a server
-    console.log('Form data:', data);
-    
-    showMessage('Merci de nous avoir contacté! Nous vous répondrons bientôt.', 'success');
-    form.reset();
+    // Submit to Formspree
+    try {
+      const response = await fetch('https://formspree.io/f/xldwgjey', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        showMessage('Merci de nous avoir contacté! Nous vous répondrons bientôt.', 'success');
+        form.reset();
+      } else {
+        showMessage('Une erreur est survenue. Veuillez réessayer.', 'error');
+      }
+    } catch (error) {
+      showMessage('Une erreur est survenue. Veuillez réessayer.', 'error');
+    }
   });
   
   function showMessage(message: string, type: 'success' | 'error') {
