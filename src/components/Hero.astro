@@ -1,0 +1,52 @@
+---
+import Button from './Button.astro';
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-dark"></div>
+  
+  <!-- Animated gradient orbs -->
+  <div class="absolute inset-0">
+    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-purple-600/40 via-purple-700/30 to-blue-600/40 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-gradient-to-br from-blue-600/35 via-cyan-600/25 to-teal-600/35 rounded-full blur-3xl animate-float-delayed"></div>
+    <div class="absolute top-3/4 left-3/4 w-[350px] h-[350px] bg-gradient-to-br from-indigo-600/30 via-purple-600/25 to-pink-600/30 rounded-full blur-2xl animate-float-slow"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-radial from-purple-800/20 via-blue-800/15 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-gradient-to-tr from-teal-700/30 to-blue-700/30 rounded-full blur-3xl animate-float"></div>
+  </div>
+  
+  <!-- Mesh gradient pattern -->
+  <div class="absolute inset-0 opacity-40">
+    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M0 40V0h40" fill="none" stroke="currentColor" stroke-width="1" class="text-neutral-600" opacity="0.4"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+  </div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto text-center animate-fade-up">
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tightest mb-6">
+        <span class="block text-gradient">Automatisez le travail répétitif.</span>
+        <span class="block text-neutral-100 mt-2">Livrez ce qui compte.</span>
+      </h1>
+      
+      <p class="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+        Des systèmes IA qui font grandir votre équipe. Nous construisons une automatisation intelligente pour les flux de développement modernes, pour que vous puissiez vous concentrer sur l'essentiel.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button variant="primary" size="lg" href="#contact">
+          Commencer
+        </Button>
+        <Button variant="secondary" size="lg" href="#services">
+          Voir nos services
+        </Button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-neutral-950 to-transparent"></div>
+</section>

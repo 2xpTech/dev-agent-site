@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-neutral-950 text-neutral-300 antialiased;
+  }
+  
+  ::selection {
+    @apply bg-neutral-700 text-neutral-100;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-900;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-700 hover:bg-neutral-600;
+  }
+  
+  :focus {
+    @apply outline-none;
+  }
+  
+  :focus-visible {
+    @apply ring-2 ring-neutral-500 ring-offset-2 ring-offset-neutral-950;
+  }
+}
+
+@layer components {
+  .glow-soft {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.02), 0 0 40px rgba(255, 255, 255, 0.01);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent;
+  }
+  
+  .backdrop-glass {
+    @apply backdrop-blur-md bg-neutral-950/80;
+  }
+  
+  .border-gradient {
+    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+                linear-gradient(90deg, #262626, #404040) border-box;
+    border: 1px solid transparent;
+  }
+  
+  .glow-purple {
+    box-shadow: 0 0 60px rgba(147, 51, 234, 0.1), 0 0 100px rgba(147, 51, 234, 0.05);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.1), 0 0 100px rgba(59, 130, 246, 0.05);
+  }
+}

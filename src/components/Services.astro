@@ -1,0 +1,65 @@
+---
+import Card from './Card.astro';
+
+const services = [
+  {
+    icon: '🤖',
+    title: 'Automatisation IA',
+    description: 'Des agents IA personnalisés qui gèrent les tâches répétitives, des revues de code aux pipelines de déploiement.'
+  },
+  {
+    icon: '⚡',
+    title: 'Intégration de flux',
+    description: 'Intégration transparente avec vos outils existants. GitHub, Slack, Jira—nous connectons tout.'
+  },
+  {
+    icon: '📊',
+    title: 'Traitement de données',
+    description: 'Des pipelines de données intelligents qui nettoient, transforment et analysent à grande échelle.'
+  },
+  {
+    icon: '🔍',
+    title: 'Intelligence du code',
+    description: 'Analyse de code intelligente, refactoring automatisé et insights de performance en temps réel.'
+  },
+  {
+    icon: '🛡️',
+    title: 'Analyse de sécurité',
+    description: 'Surveillance continue de la sécurité avec détection et correction automatisées des vulnérabilités.'
+  },
+  {
+    icon: '🎯',
+    title: 'Stratégie technique',
+    description: "Conseils d'experts sur l'adoption de l'IA et les feuilles de route d'automatisation pour les équipes d'ingénierie."
+  }
+];
+---
+
+<section id="services" class="py-24 relative">
+  <!-- Background accent -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-purple-600/20 via-violet-600/15 to-indigo-600/20 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-teal-600/20 via-cyan-600/15 to-blue-600/20 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 relative">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 tracking-tightest">
+        Ce que nous faisons
+      </h2>
+      <p class="text-xl text-neutral-400 max-w-2xl mx-auto">
+        Nous construisons des outils propulsés par l'IA qui éliminent le travail fastidieux et amplifient l'impact de votre équipe.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <Card
+          icon={service.icon}
+          title={service.title}
+          description={service.description}
+        />
+      ))}
+    </div>
+  </div>
+</section>
